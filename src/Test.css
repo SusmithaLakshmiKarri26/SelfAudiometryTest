@@ -1,0 +1,164 @@
+/* Overall container */
+.test-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 30px;
+  background: #fadbbd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Instructions Panel */
+.instructions {
+  width: 30%;
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  line-height: 1.6;
+  margin-top: 200px; /* Move instructions down */
+}
+
+.instructions h3 {
+  font-size: 24px;
+  color: #065f7c;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #3b42cf;
+  padding-bottom: 8px;
+}
+
+.instructions ol {
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.instructions li {
+  margin-bottom: 12px;
+}
+
+/* Grid Container */
+/* Grid Container */
+.grid-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Move grid to bottom */
+  align-items: center;
+  min-height: 95vh; /* Ensure it takes full viewport height */
+}
+
+/* Grid layout for both header and rows */
+.grid {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 70px); /* Y-axis + frequencies */
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+/* X-Axis Labels */
+.grid-header-item {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  padding: px 0;
+}
+
+/* Y-Axis Labels */
+.y-axis-label {
+  text-align: right;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  margin-right: 6px;
+}
+
+/* Placeholder for aligning Y-axis with the grid */
+.y-axis-label-placeholder {
+  width: 60px;
+}
+
+/* Grid Cells */
+.grid-cell {
+  width: 70px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.grid-cell input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.grid-cell:hover {
+  background-color: #e6faff;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-left: 30px;
+  margin-top: 40px;
+  margin-top: 250px; /* Move button container lower */
+}
+
+.test-ear-button,
+.generate-report-button {
+   /* Deep Blue */
+  background-color: #0D47A1;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.test-ear-button:hover,
+.generate-report-button:hover {
+  background-color: #329cb0;
+  transform: scale(1.03);
+}
+
+.test-ear-button:disabled,
+.generate-report-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Optional: Responsive */
+@media (max-width: 1000px) {
+  .test-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .instructions,
+  .button-container {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 50px repeat(7, 60px);
+  }
+
+  .grid-cell {
+    width: 60px;
+    height: 36px;
+  }
+}

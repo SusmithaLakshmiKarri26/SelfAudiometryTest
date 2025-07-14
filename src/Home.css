@@ -1,0 +1,148 @@
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background-color: #F4F6F9; /* Soft Light Gray */
+  font-family: "Arial", sans-serif;
+  color: #333333; /* Dark Gray */
+}
+
+/* Home Container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('./assets/background.jpg'); /* Update with your image path */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 60px; /* Moves content slightly down */
+}
+
+/* Title Animation - Moves Left to Right */
+.title {
+  position: absolute;
+  top: 120px; /* Adjusted for spacing */
+  font-size: 80px;
+  font-weight: bold;
+  color: #0D47A1; /* Deep Blue */
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: moveAndReveal 2s ease-out forwards;
+}
+
+/* Move from Left to Right and Reveal */
+@keyframes moveAndReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Overlay Box */
+.overlay-box {
+  background: rgba(255, 255, 255, 0.9); /* Professional white */
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 40%;
+  max-width: 500px;
+  height: auto;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Primary Button */
+.test-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #1976D2; /* Strong Blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.test-button:hover {
+  background-color: #0B3D91; /* Darker Blue */
+  transform: scale(1.05);
+}
+
+/* Text Styling */
+.text {
+  color: #D32F2F; /* Muted Red */
+  font-size: 25px;
+}
+
+.text-sm {
+  color: #1976D2; /* Sky Blue */
+  font-size: 23px;
+  animation: blink 1.5s infinite alternate;
+}
+
+/* Blinking Text Effect */
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* 🔹 Responsive Design - Works on All Devices */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 60px;
+  }
+
+  .overlay-box {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .overlay-box {
+    width: 75%;
+    padding: 20px;
+  }
+
+  .test-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .overlay-box {
+    width: 85%;
+    padding: 15px;
+  }
+}
